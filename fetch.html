@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dark{
+        background-color: black;
+        color: white;
+        }
+    </style>
+</head>
+<body>
+    <button id="asad" onclick="changeMode()"></button>
+    <script>
+        function changeMode(){
+           let qazirgikui =  document.body.classList.toggle('dark');
+
+           if(qazirgikui === true){
+               localStorage.setItem('mode','dark');
+                document.getElementById('asad').textContent = 'light rezhim auystyru';
+              }else{
+                document.getElementById('asad').textContent = 'Dark rezhim auystyru';
+                  localStorage.setItem('mode','light');
+              }
+        }
+        function checkMode() {
+            let saqtalgankui = localStorage.getItem('mode')
+            
+            if (saqtalgankui === 'dark') {
+                document.body.classList.add('dark');
+                document.getElementById('asad').textContent = 'Light rezhim auystyru';
+              }else{
+                document.getElementById('asad').textContent = 'Dark rezhim auystyru';
+              }
+            }
+            checkMode();
+        
+    </script>
+    <script src="fetch.js"></script>
+</body>
+</html>
